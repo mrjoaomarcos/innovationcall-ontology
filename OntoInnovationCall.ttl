@@ -1,0 +1,520 @@
+@prefix : <http://ontoinnovationcall.jmrezende.com#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix gufo: <http://purl.org/nemo/gufo#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://ontoinnovationcall.jmrezende.com#> .
+
+<http://ontoinnovationcall.jmrezende.com> rdf:type owl:Ontology ;
+                                           owl:imports <http://purl.org/nemo/gufo#/1.0.0> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://ontoinnovationcall.jmrezende.com#aloca
+:aloca rdf:type owl:ObjectProperty ;
+       rdfs:domain :InstitutoSenai ;
+       rdfs:range :EquipeProjeto ;
+       rdfs:label "aloca"@en .
+
+
+###  http://ontoinnovationcall.jmrezende.com#assina
+:assina rdf:type owl:ObjectProperty ;
+        rdfs:domain :EmpresaProponente ;
+        rdfs:range :Contrato ;
+        rdfs:label "assina"@en .
+
+
+###  http://ontoinnovationcall.jmrezende.com#assina_1
+:assina_1 rdf:type owl:ObjectProperty ;
+          rdfs:domain :InstituicaoAncora ;
+          rdfs:range :Contrato ;
+          rdfs:label "assina"@en .
+
+
+###  http://ontoinnovationcall.jmrezende.com#contm
+:contm rdf:type owl:ObjectProperty ;
+       rdfs:domain :EditalDeInovacaoDesafioDeInovacao ;
+       rdfs:range :Chamada ;
+       rdfs:label "cont�m"@en .
+
+
+###  http://ontoinnovationcall.jmrezende.com#contm_1
+:contm_1 rdf:type owl:ObjectProperty ;
+         rdfs:domain :EquipeProjeto ;
+         rdfs:range :Funcionario ;
+         rdfs:label "cont�m"@en .
+
+
+###  http://ontoinnovationcall.jmrezende.com#executa
+:executa rdf:type owl:ObjectProperty ;
+         rdfs:domain :ChamadaEmpreendedorismoIndustrial ;
+         rdfs:range :SubmissaoChamadaEmpreendedorismoIndustrial ;
+         rdfs:label "executa"@en .
+
+
+###  http://ontoinnovationcall.jmrezende.com#executa_1
+:executa_1 rdf:type owl:ObjectProperty ;
+           rdfs:domain :EquipeProjeto ;
+           rdfs:range :Projeto ;
+           rdfs:label "executa"@en .
+
+
+###  http://ontoinnovationcall.jmrezende.com#gerencia
+:gerencia rdf:type owl:ObjectProperty ;
+          rdfs:domain :HubDeInovacao ;
+          rdfs:range :ProgramaInovacao ;
+          rdfs:label "gerencia"@en .
+
+
+###  http://ontoinnovationcall.jmrezende.com#lana
+:lana rdf:type owl:ObjectProperty ;
+      rdfs:domain :InstituicaoAncora ;
+      rdfs:range :Desafio ;
+      rdfs:label "lança"@en .
+
+
+###  http://ontoinnovationcall.jmrezende.com#participa
+:participa rdf:type owl:ObjectProperty ;
+           rdfs:domain :InstitutoSenai ;
+           rdfs:range :SubmissaoChamadaEmpreendedorismoIndustrial ;
+           rdfs:label "participa"@en .
+
+
+###  http://ontoinnovationcall.jmrezende.com#participa_1
+:participa_1 rdf:type owl:ObjectProperty ;
+             rdfs:domain :InstituicaoAncora ;
+             rdfs:range :SubmissaoChamadaEmpreendedorismoIndustrial ;
+             rdfs:label "participa"@en .
+
+
+###  http://ontoinnovationcall.jmrezende.com#participa_2
+:participa_2 rdf:type owl:ObjectProperty ;
+             rdfs:domain :EmpresaProponente ;
+             rdfs:range :SubmissaoChamadaEmpreendedorismoIndustrial ;
+             rdfs:label "participa"@en .
+
+
+###  http://ontoinnovationcall.jmrezende.com#prope
+:prope rdf:type owl:ObjectProperty ;
+       rdfs:domain :EmpresaProponente ;
+       rdfs:range :Projeto ;
+       rdfs:label "prop�e"@en .
+
+
+###  http://ontoinnovationcall.jmrezende.com#publica
+:publica rdf:type owl:ObjectProperty ;
+         rdfs:domain :ProgramaInovacao ;
+         rdfs:range :Chamada ;
+         rdfs:label "publica"@en .
+
+
+###  http://ontoinnovationcall.jmrezende.com#seleciona
+:seleciona rdf:type owl:ObjectProperty ;
+           rdfs:domain :Desafio ;
+           rdfs:range :Projeto ;
+           rdfs:label "seleciona"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://ontoinnovationcall.jmrezende.com#cnpj
+:cnpj rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf gufo:hasQualityValue ;
+      rdfs:domain :Organizacao ;
+      rdfs:label "cnpj"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://ontoinnovationcall.jmrezende.com#Chamada
+:Chamada rdf:type owl:Class ;
+         rdfs:subClassOf gufo:FunctionalComplex .
+
+
+###  http://ontoinnovationcall.jmrezende.com#ChamadaAberta
+:ChamadaAberta rdf:type owl:Class ;
+               rdfs:subClassOf :Chamada .
+
+
+###  http://ontoinnovationcall.jmrezende.com#ChamadaEmpreendedorismoIndustrial
+:ChamadaEmpreendedorismoIndustrial rdf:type owl:Class ;
+                                   rdfs:subClassOf :Chamada .
+
+
+###  http://ontoinnovationcall.jmrezende.com#ChamadaEncerrada
+:ChamadaEncerrada rdf:type owl:Class ;
+                  rdfs:subClassOf :Chamada .
+
+
+###  http://ontoinnovationcall.jmrezende.com#Conceito
+:Conceito rdf:type owl:Class ;
+          rdfs:subClassOf :ChamadaEmpreendedorismoIndustrial .
+
+
+###  http://ontoinnovationcall.jmrezende.com#Contrato
+:Contrato rdf:type owl:Class ;
+          rdfs:subClassOf gufo:Relator .
+
+
+###  http://ontoinnovationcall.jmrezende.com#Desafio
+:Desafio rdf:type owl:Class ;
+         rdfs:subClassOf gufo:FunctionalComplex .
+
+
+###  http://ontoinnovationcall.jmrezende.com#Desenvolvedor
+:Desenvolvedor rdf:type owl:Class ;
+               rdfs:subClassOf :Funcionario .
+
+
+###  http://ontoinnovationcall.jmrezende.com#Desenvolvimento
+:Desenvolvimento rdf:type owl:Class ;
+                 rdfs:subClassOf :ChamadaEmpreendedorismoIndustrial .
+
+
+###  http://ontoinnovationcall.jmrezende.com#EditalDeInovacao
+:EditalDeInovacao rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Class ;
+                                        owl:unionOf ( :EditalDeInovacaoDesafioDeInovacao
+                                                      :EditalDeInovacaoRecursosReembolsavel
+                                                    )
+                                      ] ;
+                  rdfs:subClassOf gufo:FunctionalComplex .
+
+
+###  http://ontoinnovationcall.jmrezende.com#EditalDeInovacaoDesafioDeInovacao
+:EditalDeInovacaoDesafioDeInovacao rdf:type owl:Class ;
+                                   rdfs:subClassOf :EditalDeInovacao ;
+                                   owl:disjointWith :EditalDeInovacaoRecursosReembolsavel .
+
+
+###  http://ontoinnovationcall.jmrezende.com#EditalDeInovacaoLeiIncentivoFiscal
+:EditalDeInovacaoLeiIncentivoFiscal rdf:type owl:Class ;
+                                    rdfs:subClassOf :EditalDeInovacao .
+
+
+###  http://ontoinnovationcall.jmrezende.com#EditalDeInovacaoRecursosReembolsavel
+:EditalDeInovacaoRecursosReembolsavel rdf:type owl:Class ;
+                                      rdfs:subClassOf :EditalDeInovacao .
+
+
+###  http://ontoinnovationcall.jmrezende.com#EditalDeInovacaoSubvencaoEconomica
+:EditalDeInovacaoSubvencaoEconomica rdf:type owl:Class ;
+                                    rdfs:subClassOf :EditalDeInovacao .
+
+
+###  http://ontoinnovationcall.jmrezende.com#EmpresaProponente
+:EmpresaProponente rdf:type owl:Class ;
+                   rdfs:subClassOf :Organizacao .
+
+
+###  http://ontoinnovationcall.jmrezende.com#EquipeProjeto
+:EquipeProjeto rdf:type owl:Class ;
+               rdfs:subClassOf gufo:VariableCollection .
+
+
+###  http://ontoinnovationcall.jmrezende.com#Funcionario
+:Funcionario rdf:type owl:Class ;
+             rdfs:subClassOf gufo:FunctionalComplex .
+
+
+###  http://ontoinnovationcall.jmrezende.com#GestorProjeto
+:GestorProjeto rdf:type owl:Class ;
+               rdfs:subClassOf :Funcionario .
+
+
+###  http://ontoinnovationcall.jmrezende.com#HubDeInovacao
+:HubDeInovacao rdf:type owl:Class ;
+               rdfs:subClassOf gufo:FunctionalComplex .
+
+
+###  http://ontoinnovationcall.jmrezende.com#InstituicaoAncora
+:InstituicaoAncora rdf:type owl:Class ;
+                   rdfs:subClassOf :Organizacao .
+
+
+###  http://ontoinnovationcall.jmrezende.com#InstitutoSenai
+:InstitutoSenai rdf:type owl:Class ;
+                rdfs:subClassOf :Organizacao .
+
+
+###  http://ontoinnovationcall.jmrezende.com#Monitoramento
+:Monitoramento rdf:type owl:Class ;
+               rdfs:subClassOf :ChamadaEmpreendedorismoIndustrial .
+
+
+###  http://ontoinnovationcall.jmrezende.com#Organizacao
+:Organizacao rdf:type owl:Class ;
+             rdfs:subClassOf gufo:FunctionalComplex .
+
+
+###  http://ontoinnovationcall.jmrezende.com#ProgramaInovacao
+:ProgramaInovacao rdf:type owl:Class ;
+                  rdfs:subClassOf gufo:FunctionalComplex .
+
+
+###  http://ontoinnovationcall.jmrezende.com#Projeto
+:Projeto rdf:type owl:Class ;
+         rdfs:subClassOf gufo:FunctionalComplex .
+
+
+###  http://ontoinnovationcall.jmrezende.com#Seleo
+:Seleo rdf:type owl:Class ;
+       rdfs:subClassOf :ChamadaEmpreendedorismoIndustrial .
+
+
+###  http://ontoinnovationcall.jmrezende.com#SubmissaoChamadaEmpreendedorismoIndustrial
+:SubmissaoChamadaEmpreendedorismoIndustrial rdf:type owl:Class ;
+                                            rdfs:subClassOf gufo:Relator .
+
+
+###  http://ontoinnovationcall.jmrezende.com#Validacao
+:Validacao rdf:type owl:Class ;
+           rdfs:subClassOf :ChamadaEmpreendedorismoIndustrial .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://ontoinnovationcall.jmrezende.com#Chamada
+:Chamada rdf:type owl:NamedIndividual ,
+                  gufo:Kind .
+
+
+###  http://ontoinnovationcall.jmrezende.com#ChamadaAberta
+:ChamadaAberta rdf:type owl:NamedIndividual ,
+                        gufo:Phase .
+
+
+###  http://ontoinnovationcall.jmrezende.com#ChamadaEmpreendedorismoIndustrial
+:ChamadaEmpreendedorismoIndustrial rdf:type owl:NamedIndividual ,
+                                            gufo:SubKind .
+
+
+###  http://ontoinnovationcall.jmrezende.com#ChamadaEncerrada
+:ChamadaEncerrada rdf:type owl:NamedIndividual ,
+                           gufo:Phase .
+
+
+###  http://ontoinnovationcall.jmrezende.com#Conceito
+:Conceito rdf:type owl:NamedIndividual ,
+                   gufo:Phase .
+
+
+###  http://ontoinnovationcall.jmrezende.com#Contrato
+:Contrato rdf:type owl:NamedIndividual ,
+                   gufo:Kind .
+
+
+###  http://ontoinnovationcall.jmrezende.com#Desafio
+:Desafio rdf:type owl:NamedIndividual ,
+                  gufo:Kind .
+
+
+###  http://ontoinnovationcall.jmrezende.com#Desenvolvedor
+:Desenvolvedor rdf:type owl:NamedIndividual ,
+                        gufo:Role .
+
+
+###  http://ontoinnovationcall.jmrezende.com#Desenvolvimento
+:Desenvolvimento rdf:type owl:NamedIndividual ,
+                          gufo:Phase .
+
+
+###  http://ontoinnovationcall.jmrezende.com#EditalDeInovacao
+:EditalDeInovacao rdf:type owl:NamedIndividual ,
+                           gufo:Category .
+
+
+###  http://ontoinnovationcall.jmrezende.com#EditalDeInovacaoDesafioDeInovacao
+:EditalDeInovacaoDesafioDeInovacao rdf:type owl:NamedIndividual ,
+                                            gufo:Category .
+
+
+###  http://ontoinnovationcall.jmrezende.com#EditalDeInovacaoLeiIncentivoFiscal
+:EditalDeInovacaoLeiIncentivoFiscal rdf:type owl:NamedIndividual ,
+                                             gufo:Category .
+
+
+###  http://ontoinnovationcall.jmrezende.com#EditalDeInovacaoRecursosReembolsavel
+:EditalDeInovacaoRecursosReembolsavel rdf:type owl:NamedIndividual ,
+                                               gufo:Category .
+
+
+###  http://ontoinnovationcall.jmrezende.com#EditalDeInovacaoSubvencaoEconomica
+:EditalDeInovacaoSubvencaoEconomica rdf:type owl:NamedIndividual ,
+                                             gufo:Category .
+
+
+###  http://ontoinnovationcall.jmrezende.com#EmpresaProponente
+:EmpresaProponente rdf:type owl:NamedIndividual ,
+                            gufo:Role .
+
+
+###  http://ontoinnovationcall.jmrezende.com#EquipeProjeto
+:EquipeProjeto rdf:type owl:NamedIndividual ,
+                        gufo:Kind .
+
+
+###  http://ontoinnovationcall.jmrezende.com#FindesLab
+:FindesLab rdf:type owl:NamedIndividual ,
+                    :HubDeInovacao .
+
+
+###  http://ontoinnovationcall.jmrezende.com#Funcionario
+:Funcionario rdf:type owl:NamedIndividual ,
+                      gufo:Kind .
+
+
+###  http://ontoinnovationcall.jmrezende.com#GestorProjeto
+:GestorProjeto rdf:type owl:NamedIndividual ,
+                        gufo:Role .
+
+
+###  http://ontoinnovationcall.jmrezende.com#HubDeInovacao
+:HubDeInovacao rdf:type owl:NamedIndividual ,
+                        gufo:Kind .
+
+
+###  http://ontoinnovationcall.jmrezende.com#InstituicaoAncora
+:InstituicaoAncora rdf:type owl:NamedIndividual ,
+                            gufo:Role .
+
+
+###  http://ontoinnovationcall.jmrezende.com#InstitutoSenai
+:InstitutoSenai rdf:type owl:NamedIndividual ,
+                         gufo:Role .
+
+
+###  http://ontoinnovationcall.jmrezende.com#Monitoramento
+:Monitoramento rdf:type owl:NamedIndividual ,
+                        gufo:Phase .
+
+
+###  http://ontoinnovationcall.jmrezende.com#Organizacao
+:Organizacao rdf:type owl:NamedIndividual ,
+                      gufo:Kind .
+
+
+###  http://ontoinnovationcall.jmrezende.com#ProgramaInovacao
+:ProgramaInovacao rdf:type owl:NamedIndividual ,
+                           gufo:Kind .
+
+
+###  http://ontoinnovationcall.jmrezende.com#Projeto
+:Projeto rdf:type owl:NamedIndividual ,
+                  gufo:Kind .
+
+
+###  http://ontoinnovationcall.jmrezende.com#Seleo
+:Seleo rdf:type owl:NamedIndividual ,
+                gufo:Phase .
+
+
+###  http://ontoinnovationcall.jmrezende.com#SubmissaoChamadaEmpreendedorismoIndustrial
+:SubmissaoChamadaEmpreendedorismoIndustrial rdf:type owl:NamedIndividual ,
+                                                     gufo:Kind .
+
+
+###  http://ontoinnovationcall.jmrezende.com#Validacao
+:Validacao rdf:type owl:NamedIndividual ,
+                    gufo:Phase .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:Chamada rdfs:label "Chamada"@en .
+
+
+:ChamadaAberta rdfs:label "ChamadaAberta"@en .
+
+
+:ChamadaEmpreendedorismoIndustrial rdfs:label "ChamadaEmpreendedorismoIndustrial"@en .
+
+
+:ChamadaEncerrada rdfs:label "ChamadaEncerrada"@en .
+
+
+:Conceito rdfs:label "Conceito"@en .
+
+
+:Contrato rdfs:label "Contrato"@en .
+
+
+:Desafio rdfs:label "Desafio"@en .
+
+
+:Desenvolvedor rdfs:label "Desenvolvedor"@en .
+
+
+:Desenvolvimento rdfs:label "Desenvolvimento"@en .
+
+
+:EditalDeInovacao rdfs:label "EditalDeInovacao"@en .
+
+
+:EditalDeInovacaoDesafioDeInovacao rdfs:label "EditalDeInovacaoDesafioDeInovacao"@en .
+
+
+:EditalDeInovacaoLeiIncentivoFiscal rdfs:label "EditalDeInovacaoLeiIncentivoFiscal"@en .
+
+
+:EditalDeInovacaoRecursosReembolsavel rdfs:label "EditalDeInovacaoRecursosReembolsavel"@en .
+
+
+:EditalDeInovacaoSubvencaoEconomica rdfs:label "EditalDeInovacaoSubvencaoEconomica"@en .
+
+
+:EmpresaProponente rdfs:label "EmpresaProponente"@en .
+
+
+:EquipeProjeto rdfs:label "EquipeProjeto"@en .
+
+
+:Funcionario rdfs:label "Funcionario"@en .
+
+
+:GestorProjeto rdfs:label "GestorProjeto"@en .
+
+
+:HubDeInovacao rdfs:label "HubDeInovacao"@en .
+
+
+:InstituicaoAncora rdfs:label "InstituicaoAncora"@en .
+
+
+:InstitutoSenai rdfs:label "InstitutoSenai"@en .
+
+
+:Monitoramento rdfs:label "Monitoramento"@en .
+
+
+:Organizacao rdfs:label "Organizacao"@en .
+
+
+:ProgramaInovacao rdfs:label "ProgramaInovacao"@en .
+
+
+:Projeto rdfs:label "Projeto"@en .
+
+
+:Seleo rdfs:label "Selecao"@en .
+
+
+:SubmissaoChamadaEmpreendedorismoIndustrial rdfs:label "SubmissaoChamadaEmpreendedorismoIndustrial"@en .
+
+
+:Validacao rdfs:label "Validacao"@en .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi

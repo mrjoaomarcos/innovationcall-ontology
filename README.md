@@ -7,5 +7,3 @@ Essa ontologia originou na disciplina de Engenharia de Ontologia do Programa de 
 Autor:
 
 * João Marcos de Rezende
-
-See <http://purl.org/nemo/doc/gufo> for usage guide and complete documentation of gUFO.
